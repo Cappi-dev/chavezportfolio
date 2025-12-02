@@ -74,7 +74,7 @@ const ProjectsSection = () => {
                                 />
 
                                 {/* Hover Overlay with Case Study Details */}
-                                <div className="absolute inset-0 bg-black/80 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-center p-8 text-white">
+                                <div className="absolute inset-0 bg-black/80 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-start pt-12 p-8 text-white">
                                     <div className="space-y-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                                         {/* Role */}
                                         <div>
@@ -142,12 +142,7 @@ const ProjectsSection = () => {
                                     <h3 className="text-xl font-bold text-black mb-1">{project.title}</h3>
                                     <p className="text-gray-500 text-sm font-medium">{project.subtitle}</p>
                                 </div>
-                                <button className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-colors">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                                        <polyline points="12 5 19 12 12 19"></polyline>
-                                    </svg>
-                                </button>
+
                             </div>
                         </div>
                     </FadeIn>

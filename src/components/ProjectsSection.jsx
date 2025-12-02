@@ -12,28 +12,44 @@ const projects = [
         title: 'Neighbornet',
         subtitle: '"A simple community app that keeps neighbors connected."',
         githubUrl: 'https://github.com/Penguinmans32/IT342-G3-NeighborNet.git',
-        image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1974&auto=format&fit=crop', // Mobile app placeholder
+        image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1974&auto=format&fit=crop',
+        role: 'Frontend Developer & Designer',
+        technologies: ['JavaScript', 'Java', 'Kotlin'],
+        challenge: 'Communities lack an organized platform to share local updates, alerts, and connect with neighbors safely.',
+        solution: 'Develop a neighborhood social network where residents can post local news, events, and alerts, interact securely, and build stronger community engagement.'
     },
     {
         id: 2,
         title: 'SavorSpace',
         subtitle: '"A recipe-sharing platform where users can upload, browse, and discover dishes from different creators."',
         githubUrl: 'https://github.com/karl2522/SavorSpace-Frontend.git',
-        image: savorSpaceImg, // Food e-commerce visualization
+        image: savorSpaceImg,
+        role: 'Frontend Developer & Designer',
+        technologies: ['JavaScript', 'CSS', 'HTML'],
+        challenge: 'Food enthusiasts struggle to discover and share recipes in a structured and interactive way. Existing platforms may lack social engagement or personalization.',
+        solution: 'Create a social recipe-sharing platform where users can upload recipes with images, comment, rate, and search for personalized recipes based on ingredients or preferences.'
     },
     {
         id: 3,
         title: 'CryptoPulse',
         subtitle: '"A crypto tracking app that shows real-time coin data, market trends, and price movements."',
         githubUrl: 'https://github.com/Cappi-dev/CryptoPulse.git',
-        image: cryptoPulseImg, // Crypto dashboard visualization
+        image: cryptoPulseImg,
+        role: 'Frontend Developer & Designer',
+        technologies: ['JavaScript', 'CSS', 'HTML'],
+        challenge: 'Investors and traders struggle with tracking cryptocurrency trends, price alerts, and portfolio management across multiple platforms.',
+        solution: 'A crypto analytics platform that aggregates real-time cryptocurrency data, provides price alerts, market insights, and portfolio management tools for seamless tracking and decision-making.'
     },
     {
         id: 4,
         title: 'Payroll System',
         subtitle: '"Payroll System is designed to automate the process of managing employee compensation, including salary calculation, tax deductions, and distribution of payments."',
         githubUrl: 'https://github.com/Cappi-dev/Payroll_System.git',
-        image: payrollImg, // Payroll dashboard visualization
+        image: payrollImg,
+        role: 'Frontend Developer & Designer',
+        technologies: ['HTML', 'Python'],
+        challenge: 'Manual payroll processing leads to errors, delayed payments, and difficulty tracking employee records. Companies also face compliance issues with taxation and labor laws.',
+        solution: 'Develop an automated payroll management system that calculates salaries, taxes, and deductions accurately, generates payslips, and provides real-time reporting for employees and HR managers.'
     },
 ];
 
@@ -48,15 +64,52 @@ const ProjectsSection = () => {
                 {projects.map((project, index) => (
                     <FadeIn key={project.id} delay={index * 0.1} direction="up">
                         <div className="group flex flex-col gap-4">
-                            {/* Image Card */}
+                            {/* Image Card with Hover Overlay */}
                             <div className="w-full aspect-[4/3] rounded-[2rem] overflow-hidden bg-gray-100 relative">
+                                {/* Image */}
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:blur-sm"
                                 />
-                                {/* View Code Button (Bottom Left) */}
-                                <div className="absolute bottom-6 left-6">
+
+                                {/* Hover Overlay with Case Study Details */}
+                                <div className="absolute inset-0 bg-black/80 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-center p-8 text-white">
+                                    <div className="space-y-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                        {/* Role */}
+                                        <div>
+                                            <h4 className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-1">Role</h4>
+                                            <p className="text-sm font-medium">{project.role}</p>
+                                        </div>
+
+                                        {/* Technologies */}
+                                        <div>
+                                            <h4 className="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-2">Technologies</h4>
+                                            <div className="flex flex-wrap gap-2">
+                                                {project.technologies.map((tech, idx) => (
+                                                    <span key={idx} className="px-3 py-1 bg-white/10 rounded-full text-xs font-medium border border-white/20">
+                                                        {tech}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        {/* Challenge */}
+                                        <div>
+                                            <h4 className="text-xs font-semibold text-orange-400 uppercase tracking-wider mb-1">Challenge</h4>
+                                            <p className="text-xs text-gray-300 leading-relaxed">{project.challenge}</p>
+                                        </div>
+
+                                        {/* Solution */}
+                                        <div>
+                                            <h4 className="text-xs font-semibold text-green-400 uppercase tracking-wider mb-1">Solution</h4>
+                                            <p className="text-xs text-gray-300 leading-relaxed">{project.solution}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* View Code Button (Bottom Left) - Always Visible */}
+                                <div className="absolute bottom-6 left-6 z-10">
                                     <a
                                         href={project.githubUrl}
                                         target="_blank"

@@ -1,7 +1,9 @@
 import React from 'react';
 import FadeIn from './FadeIn';
 import Button from './Button';
-import profileImg from '../assets/profile.png';
+import aiProfileImg from '../assets/AI_CHAVEZ.png';
+import thumbsUpImg from '../assets/tumbsup_chavez.png';
+import resumePdf from '../assets/Chavez_Resume.pdf';
 
 const AboutSection = () => {
     return (
@@ -29,7 +31,7 @@ const AboutSection = () => {
 
                     <FadeIn direction="up" delay={0.5}>
                         <div className="mt-12">
-                            <Button>Let's Talk</Button>
+                            <Button href={resumePdf} download="Chavez_Resume.pdf">Download Resume</Button>
                         </div>
                     </FadeIn>
                 </div>
@@ -37,12 +39,18 @@ const AboutSection = () => {
                 {/* Right Column: Image and Caption */}
                 <div className="flex flex-col gap-6 items-center">
                     <FadeIn direction="left" delay={0.4}>
-                        <div className="w-full aspect-[4/3] rounded-[2rem] overflow-hidden bg-gray-100">
-                            {/* User image */}
+                        <div className="w-full aspect-[4/3] rounded-[2rem] overflow-hidden bg-gray-100 relative group">
+                            {/* Default Image (AI Chavez) */}
                             <img
-                                src={profileImg}
+                                src={aiProfileImg}
                                 alt="Portrait of Jes Emanuel Chavez"
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            {/* Hover Image (Thumbs Up) */}
+                            <img
+                                src={thumbsUpImg}
+                                alt="Thumbs up portrait"
+                                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
                             />
                         </div>
                     </FadeIn>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ children, onClick, href, target, rel, className = '' }) => {
+const Button = ({ children, onClick, href, target, rel, className = '', ...props }) => {
     const baseClasses = `bg-[#0a0a0a] text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-black transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center gap-2 group ${className}`;
 
     if (href) {
@@ -10,6 +10,7 @@ const Button = ({ children, onClick, href, target, rel, className = '' }) => {
                 target={target}
                 rel={rel}
                 className={baseClasses}
+                {...props}
             >
                 {children}
                 <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -21,6 +22,7 @@ const Button = ({ children, onClick, href, target, rel, className = '' }) => {
         <button
             onClick={onClick}
             className={baseClasses}
+            {...props}
         >
             {children}
             <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>

@@ -61,16 +61,9 @@ const Hero = () => {
 
             {/* Subtitle */}
             <Reveal delay={0.5}>
-                <p className="text-base md:text-lg text-gray-600 max-w-2xl mb-10 font-medium">
+                <p className="text-base md:text-lg text-gray-600 max-w-2xl mb-16 font-medium">
                     I Design Beautifully Simple Things And I Love What I Do. Just Simple Like That!
                 </p>
-            </Reveal>
-
-            {/* Button */}
-            <Reveal delay={0.6}>
-                <div className="mb-16">
-                    <Button>Let's Talk</Button>
-                </div>
             </Reveal>
 
             {/* Badge positioned absolutely or relatively depending on layout */}

@@ -3,6 +3,7 @@ import Badge from './Badge';
 import Button from './Button';
 import Reveal from './Reveal';
 import FadeIn from './FadeIn';
+import Typewriter from './Typewriter';
 
 const Hero = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -52,9 +53,13 @@ const Hero = () => {
                 <Reveal delay={0.4}>
                     <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4 text-5xl md:text-7xl lg:text-9xl font-black tracking-tighter uppercase">
                         <span className="text-black">&</span>
-                        <span className="text-transparent [-webkit-text-stroke:1px_black] md:[-webkit-text-stroke:2px_black]">
-                            WEB DESIGNER
-                        </span>
+                        <Typewriter
+                            text="FRONTEND DEV"
+                            speed={100}
+                            delay={1000}
+                            className="text-transparent [-webkit-text-stroke:1px_black] md:[-webkit-text-stroke:2px_black]"
+                            cursorClassName="text-black text-5xl md:text-7xl lg:text-9xl"
+                        />
                     </div>
                 </Reveal>
             </div>

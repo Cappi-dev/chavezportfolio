@@ -142,8 +142,8 @@ const Navbar = () => {
                                             href={link.href}
                                             onClick={(e) => handleNavClick(e, link.href)}
                                             className={`text-lg font-medium px-4 py-3 rounded-xl transition-all ${isActive
-                                                    ? 'bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 text-white'
-                                                    : 'text-gray-700 hover:bg-gray-100'
+                                                ? 'bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 text-white'
+                                                : 'text-gray-700 hover:bg-gray-100'
                                                 }`}
                                         >
                                             {link.name}

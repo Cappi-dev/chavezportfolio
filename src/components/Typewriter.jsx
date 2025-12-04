@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const Typewriter = ({
-    text,
+    texts = [],  // Array of texts to cycle through
     speed = 150,
     deleteSpeed = 100,
     delay = 0,
@@ -14,6 +14,11 @@ const Typewriter = ({
     const [displayedText, setDisplayedText] = useState('');
     const [started, setStarted] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    // Support both single text (backwards compatibility) and array of texts
+    const textArray = Array.isArray(texts) ? texts : [texts];
+    const currentText = textArray[currentIndex] || '';
 
     useEffect(() => {
         const timeout = setTimeout(() => setStarted(true), delay);
@@ -26,8 +31,8 @@ const Typewriter = ({
         const handleTyping = () => {
             if (!isDeleting) {
                 // Typing
-                if (displayedText.length < text.length) {
-                    setDisplayedText(text.slice(0, displayedText.length + 1));
+                if (displayedText.length < currentText.length) {
+                    setDisplayedText(currentText.slice(0, displayedText.length + 1));
                 } else {
                     // Finished typing, wait before deleting
                     setTimeout(() => setIsDeleting(true), waitBeforeDelete);
@@ -35,10 +40,12 @@ const Typewriter = ({
             } else {
                 // Deleting
                 if (displayedText.length > 0) {
-                    setDisplayedText(text.slice(0, displayedText.length - 1));
+                    setDisplayedText(currentText.slice(0, displayedText.length - 1));
                 } else {
-                    // Finished deleting, wait before typing again
-                    setTimeout(() => setIsDeleting(false), waitBeforeType);
+                    // Finished deleting, move to next text
+                    setIsDeleting(false);
+                    setCurrentIndex((prevIndex) => (prevIndex + 1) % textArray.length);
+                    setTimeout(() => { }, waitBeforeType);
                 }
             }
         };
@@ -50,7 +57,7 @@ const Typewriter = ({
 
         return () => clearTimeout(timer);
 
-    }, [displayedText, isDeleting, started, text, speed, deleteSpeed, waitBeforeDelete, waitBeforeType]);
+    }, [displayedText, isDeleting, started, currentText, speed, deleteSpeed, waitBeforeDelete, waitBeforeType, textArray.length]);
 
     return (
         <span className="inline-flex items-center">

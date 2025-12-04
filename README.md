@@ -1,6 +1,6 @@
 # 🎨 Jes Emanuel Chavez - Portfolio
 
-A modern, responsive portfolio website showcasing my work as a UI/UX Designer and Frontend Developer. Built with React, Vite, and Tailwind CSS, featuring smooth animations, glassmorphism effects, and an elegant dark theme.
+A modern, responsive portfolio website showcasing my work as a UI/UX Designer and Frontend Developer. Built with React, Vite, and Tailwind CSS, featuring smooth animations, glassmorphism effects, and dynamic typing effects.
 
 ## ✨ Features
 
@@ -8,9 +8,11 @@ A modern, responsive portfolio website showcasing my work as a UI/UX Designer an
 - **Responsive Layout**: Fully responsive design that works seamlessly across all devices
 - **Interactive Components**: Engaging animations using Framer Motion and custom reveal effects
 - **Aurora Background**: Dynamic animated mesh gradient background effect
-- **Skills Showcase**: Hexagonal skill cards with floating animations and hover effects
+- **Typing Animation**: Cycling typewriter effect on hero section alternating between "FRONTEND DEV" and "WEB DESIGNER"
+- **Skills Showcase**: Hexagonal skill cards with floating animations, hover effects, and official brand icons
 - **Project Gallery**: Featured projects with "View Code" links to GitHub repositories
 - **Contact Section**: Easy-to-use contact information with social media links
+- **Smooth Scrolling**: Custom smooth scroll implementation using Lenis
 
 ## 🛠️ Tech Stack
 
@@ -19,6 +21,8 @@ A modern, responsive portfolio website showcasing my work as a UI/UX Designer an
 - **Vite** - Next-generation frontend build tool
 - **Tailwind CSS** - Utility-first CSS framework
 - **JavaScript** - Programming language
+- **Framer Motion** - Animation library
+- **Lenis** - Smooth scroll library
 
 ### Design & Tools
 - **Figma** - UI/UX design and prototyping
@@ -66,10 +70,13 @@ chavezportfolio/
 │   ├── assets/          # Images and static files
 │   ├── components/      # React components
 │   │   ├── Hero.jsx
+│   │   ├── Typewriter.jsx
 │   │   ├── ProjectsSection.jsx
 │   │   ├── SkillsSection.jsx
 │   │   ├── ContactSection.jsx
 │   │   ├── Navbar.jsx
+│   │   ├── AuroraBackground.jsx
+│   │   ├── SmoothScroll.jsx
 │   │   └── ...
 │   ├── pages/          # Page components
 │   ├── App.jsx         # Main app component
@@ -99,15 +106,16 @@ Designed to automate the process of managing employee compensation, including sa
 ## 🎨 Key Components
 
 - **Aurora Background**: Animated mesh gradient effect for visual appeal
+- **Typewriter Component**: Cycling text animation with type/delete effects
 - **Hexagon Skills Grid**: Interactive skill cards with glassmorphism and floating animations
-- **Smooth Scroll**: Custom smooth scrolling implementation
+- **Smooth Scroll**: Custom smooth scrolling implementation using Lenis
 - **Reveal Animations**: Staggered reveal effects for content sections
 - **Responsive Navbar**: Mobile-friendly navigation with smooth transitions
 
 ## 📱 Contact
 
 - **Email**: [chavezjes71@gmail.com](mailto:chavezjes71@gmail.com)
-- **Phone**: (+63) 9670092113
+- **Location**: Philippines
 - **LinkedIn**: [Jes Chavez](https://www.linkedin.com/in/jes-chavez-234434398/)
 - **Facebook**: [JesEmChavez](https://www.facebook.com/JesEmChavez/)
 - **GitHub**: [Cappi-dev](https://github.com/Cappi-dev)
@@ -119,7 +127,7 @@ Designed to automate the process of managing employee compensation, including sa
 ## 🙏 Acknowledgments
 
 - Design inspiration from modern portfolio trends
-- Icons and assets from various open-source projects
+- Icons from Simple Icons
 - Built with passion and attention to detail
 
 ---

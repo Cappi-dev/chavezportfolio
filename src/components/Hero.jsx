@@ -54,7 +54,7 @@ const Hero = () => {
                     <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4 text-5xl md:text-7xl lg:text-9xl font-black tracking-tighter uppercase">
                         <span className="text-black">&</span>
                         <Typewriter
-                            text="FRONTEND DEV"
+                            texts={["FRONTEND DEV", "WEB DESIGNER"]}
                             speed={100}
                             delay={1000}
                             className="text-transparent [-webkit-text-stroke:1px_black] md:[-webkit-text-stroke:2px_black]"

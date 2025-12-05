@@ -65,15 +65,15 @@ const Navbar = () => {
                 <div className="flex items-center gap-2">
                     <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="flex items-center gap-2 text-black no-underline group">
                         <div className="relative flex items-center justify-center">
-                            {/* Gradient glow on hover */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 rounded-full opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-300"></div>
-                            <div className="relative w-9 h-9 rounded-full border-2 border-black group-hover:border-transparent bg-gradient-to-br group-hover:from-purple-600 group-hover:via-blue-600 group-hover:to-pink-600 flex items-center justify-center transition-all duration-300">
+                            {/* Gray glow on hover */}
+                            <div className="absolute inset-0 bg-gray-400 rounded-full opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-300"></div>
+                            <div className="relative w-9 h-9 rounded-full border-2 border-black group-hover:border-gray-600 group-hover:bg-gray-800 flex items-center justify-center transition-all duration-300">
                                 <div className="w-2 h-2 bg-black group-hover:bg-white rounded-full transition-colors duration-300"></div>
                             </div>
                         </div>
                         <div className="flex flex-col leading-none">
-                            <span className="text-xs font-bold tracking-[0.2em] group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:via-blue-600 group-hover:to-pink-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">Cappi</span>
-                            <span className="text-lg font-bold tracking-widest group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:via-blue-600 group-hover:to-pink-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">Dev</span>
+                            <span className="text-xs font-bold tracking-[0.2em] group-hover:text-gray-700 transition-all duration-300">Cappi</span>
+                            <span className="text-lg font-bold tracking-widest group-hover:text-gray-700 transition-all duration-300">Dev</span>
                         </div>
                     </a>
                 </div>
@@ -88,10 +88,12 @@ const Navbar = () => {
                                 href={link.href}
                                 onClick={(e) => handleNavClick(e, link.href)}
                                 className="relative text-sm font-medium text-gray-600 hover:text-black transition-colors group py-2"
+                                data-shootable="nav"
+                                data-target-id={`nav-${link.name.toLowerCase()}`}
                             >
                                 {link.name}
                                 {/* Animated underline */}
-                                <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                                <span className={`absolute bottom-0 left-0 h-0.5 bg-black transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                             </a>
                         );
                     })}

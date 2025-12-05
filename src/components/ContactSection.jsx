@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Reveal from './Reveal';
 import FadeIn from './FadeIn';
 import contactImg from '../assets/contact_me.png';
+import FooterGame from './FooterGame';
 
 const ContactSection = () => {
     const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ const ContactSection = () => {
     });
     const [status, setStatus] = useState(''); // '', 'sending', 'success', 'error'
     const [focusedField, setFocusedField] = useState('');
+    const [isGameMode, setIsGameMode] = useState(false);
+
 
     const maxMessageLength = 500;
     const messageLength = formData.message.length;
@@ -260,12 +263,14 @@ const ContactSection = () => {
 
                     {/* Social Links */}
                     <FadeIn direction="up" delay={0.2}>
-                        <div className="flex flex-wrap justify-center gap-6 mb-20">
+                        <div className="flex flex-wrap justify-center gap-6 mb-8">
                             <a
                                 href="https://www.linkedin.com/in/jes-chavez-234434398/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-8 py-3 rounded-full border border-gray-700 text-gray-400 hover:text-white hover:border-white transition-all duration-300 text-sm font-medium min-w-[140px] text-center"
+                                data-shootable="social"
+                                data-target-id="social-linkedin"
                             >
                                 LinkedIn
                             </a>
@@ -274,6 +279,8 @@ const ContactSection = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-8 py-3 rounded-full border border-gray-700 text-gray-400 hover:text-white hover:border-white transition-all duration-300 text-sm font-medium min-w-[140px] text-center"
+                                data-shootable="social"
+                                data-target-id="social-facebook"
                             >
                                 Facebook
                             </a>
@@ -282,9 +289,23 @@ const ContactSection = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-8 py-3 rounded-full border border-gray-700 text-gray-400 hover:text-white hover:border-white transition-all duration-300 text-sm font-medium min-w-[140px] text-center"
+                                data-shootable="social"
+                                data-target-id="social-github"
                             >
                                 GitHub
                             </a>
+                        </div>
+                    </FadeIn>
+
+                    {/* Play Mode Button */}
+                    <FadeIn direction="up" delay={0.3} fullWidth>
+                        <div className="flex justify-center mb-12">
+                            <button
+                                onClick={() => setIsGameMode(true)}
+                                className="px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-bold hover:from-green-600 hover:to-emerald-700 transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-2"
+                            >
+                                🎮 Play Mode
+                            </button>
                         </div>
                     </FadeIn>
 
@@ -299,6 +320,13 @@ const ContactSection = () => {
 
                 </div>
             </div>
+
+            {/* Game Mode */}
+            {isGameMode && (
+                <FooterGame
+                    onExit={() => setIsGameMode(false)}
+                />
+            )}
         </footer>
     );
 };

@@ -24,7 +24,10 @@ const skills = [
 ];
 
 const Hexagon = ({ skill, index }) => (
-    <div className="relative w-[120px] h-[104px] md:w-[140px] md:h-[122px] flex items-center justify-center group z-10 shrink-0"
+    <div
+        className="relative w-[120px] h-[104px] md:w-[140px] md:h-[122px] flex items-center justify-center group z-10 shrink-0"
+        data-shootable="skill"
+        data-target-id={`skill-${skill.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
         style={{
             filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.6))',
             animation: `float 6s ease-in-out infinite`,

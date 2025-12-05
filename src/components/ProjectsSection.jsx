@@ -63,7 +63,11 @@ const ProjectsSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
                 {projects.map((project, index) => (
                     <FadeIn key={project.id} delay={index * 0.1} direction="up">
-                        <div className="group flex flex-col gap-4">
+                        <div
+                            className="group flex flex-col gap-4"
+                            data-shootable="project"
+                            data-target-id={`project-${project.id}`}
+                        >
                             {/* Image Card with Hover Overlay */}
                             <div className="w-full aspect-[4/3] rounded-[2rem] overflow-hidden bg-gray-100 relative">
                                 {/* Image */}
